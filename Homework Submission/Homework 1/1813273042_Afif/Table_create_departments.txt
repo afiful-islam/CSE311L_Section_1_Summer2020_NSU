@@ -1,0 +1,5 @@
+CREATE TABLE Departments(
+    Department_Id int(4) PRIMARY KEY,
+    Department_Name VARCHAR(20),
+    Manager_Id int(6),
+    Location_Id int(4))
