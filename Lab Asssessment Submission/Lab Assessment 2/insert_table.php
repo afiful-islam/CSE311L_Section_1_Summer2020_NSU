@@ -8,7 +8,7 @@ if($link == false)
 }
 
 $sql = "INSERT INTO test_table(id,username,password) VALUES
-('1','DEMO','DEMO'))";
+('1','DEMO','DEMO')";
 
 if(mysqli_query($link, $sql))
 {
