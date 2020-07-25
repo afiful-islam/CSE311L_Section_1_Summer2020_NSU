@@ -1,0 +1,1 @@
+SELECT last_name, ((salary*12)/52) AS 'Weekly Salary', Department_Id FROM employees
