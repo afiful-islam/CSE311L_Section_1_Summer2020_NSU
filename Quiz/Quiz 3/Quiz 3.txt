@@ -1,0 +1,11 @@
+1. SELECT last_name||', '||job_id "Employee and Title"
+FROM employees
+
+2. SELECT last_name, salary, commission_pct
+FROM employees
+WHERE commission_pct IS NOT NULL
+ORDER BY salary DESC, commission_pct DESC;
+
+3. SELECT last_name, hire_date
+FROM employees
+WHERE hire_date LIKE '%94%'
