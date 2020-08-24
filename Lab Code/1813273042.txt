@@ -1,0 +1,10 @@
+SELECT Last_Name, department_name department_name FROM employees, departments
+
+SELECT e.employee_id, e.Last_Name, e.department_id, d.department_id, d.location_id FROM employees e, departments d WHERE e.Department_Id = d.Department_Id
+
+SELECT concat(e.last_name, ' works for', m.last_name) FROM employees e, employees m WHERE e.Employee_Id = m.Employee_Id
+
+SELECT e.last_name, e.department_id, d.department_name FROM employees e LEFT OUTER JOIN departments d ON (e.Department_Id = d.Department_Id)
+
+SELECT AVG(Salary) AS 'AVG SAL', MAX(Salary) AS 'MAX SAL', MIN(salary) AS 'MIN SAL', SUM(salary) AS 'TOATL SAL' FROM employees WHERE job_id LIKE '%REP%'
+
