@@ -1,0 +1,39 @@
+SELECT Last_Name AS 'Name'
+FROM employees
+WHERE Salary > (SELECT Salary
+               FROM employees
+               WHERE Last_Name = 'Abel')
+
+SELECT Last_Name, Job_Id, Salary
+from employees
+WHERE Job_Id = (SELECT Job_Id
+               FROM employees
+               WHERE Job_Id = 141)
+               AND Salary > (SELECT Salary
+                             FROM employees
+                             WHERE Employee_Id = 143)
+
+SELECT Last_Name, Job_Id, Salary
+from employees
+WHERE Salary = (SELECT MIN(Salary)
+               FROM employees)
+
+SELECT Employee_Id, Last_Name
+FROM employees
+WHERE Salary IN (SELECT MIN(Salary)
+                FROM employees
+                GROUP BY Department_Id)
+
+SELECT Employee_Id, Last_Name, Job_Id, Salary
+FROM employees
+WHERE Salary < ANY (SELECT Salary
+                    FROM employees
+                    WHERE Job_Id = 'IT_PROG')
+                    AND Job_Id <> 'IT_PROG'
+
+SELECT Employee_Id, Last_Name, Job_Id, Salary
+FROM employees
+WHERE Salary < ALL (SELECT Salary
+                    FROM employees
+                    WHERE Job_Id = 'IT_PROG')
+                    AND Job_Id <> 'IT_PROG'
